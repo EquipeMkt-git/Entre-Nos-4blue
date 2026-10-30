@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Mesa · Entre Nós 4blue</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e1a3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232f7bff' d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="pagina-mesa">
+  <header class="barra">
+    <a class="marca" href="salao.html" aria-label="Voltar ao salão"><i data-ico="voltar"></i><span>Entre Nós</span></a>
+    <span id="info-sala" class="codigo-sala" hidden></span>
+    <div class="acoes" id="acoes-barra" hidden>
+      <button class="btn btn-fantasma btn-peq" type="button" id="b-musica" aria-pressed="true" aria-label="Música"></button>
+      <button class="btn btn-fantasma btn-peq" type="button" data-regras aria-label="Como se joga">%%livro%%<span>Regras</span></button>
+      <button class="btn btn-fantasma btn-peq" type="button" id="b-convidar" aria-label="Convidar">%%chamar%%<span>Convidar</span></button>
+      <button class="btn btn-fantasma btn-peq" type="button" id="b-sair" aria-label="Sair da mesa">%%sair%%<span>Sair</span></button>
+    </div>
+  </header>
+  <div class="demo-aviso" id="demo-aviso" hidden>Modo demonstração: a mesa existe só neste navegador. Cada aba é uma pessoa.</div>
+
+  <main class="mesa" id="mesa">
+    <section class="palco" id="palco" aria-live="polite">
+      <p class="status">Abrindo a mesa...</p>
+    </section>
+    <aside class="chat" id="chat" aria-labelledby="t-chat" hidden>
+      <div class="cab-chat"><span id="t-chat">Conversa da mesa</span><small id="chat-quem"></small></div>
+      <div class="mensagens" id="mensagens" role="log" aria-live="polite" aria-label="Mensagens da mesa"></div>
+      <div class="reacoes" id="reacoes" role="group" aria-label="Reações rápidas">
+        <button type="button" data-rea="coracao" aria-label="Mandar amor">%%coracao%%</button>
+        <button type="button" data-rea="estrela" aria-label="Achei incrível">%%estrela%%</button>
+        <button type="button" data-rea="risada" aria-label="Rir">%%risada%%</button>
+        <button type="button" data-rea="uau" aria-label="Fiquei de boca aberta">%%uau%%</button>
+      </div>
+      <form class="compor" id="compor">
+        <label class="oculto" for="texto">Mensagem</label>
+        <textarea id="texto" rows="1" maxlength="300" placeholder="Escreva para a mesa"></textarea>
+        <button class="btn" type="submit" aria-label="Enviar mensagem">%%enviar%%</button>
+      </form>
+      <p class="contador" id="contador" aria-hidden="true"></p>
+    </aside>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/cartas.js"></script>
+<script src="js/logica.js"></script>
+<script src="js/servico.js"></script>
+<script src="js/api.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/musicas.js"></script>
+<script src="js/musica.js"></script>
+<script src="js/jogo.js"></script>
+</body>
+</html>

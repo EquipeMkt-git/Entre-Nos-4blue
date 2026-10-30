@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organizador · Entre Nós 4blue</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e1a3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232f7bff' d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="pg-admin">
+<header class="topo">
+  <a class="logo" href="./"><i data-ico="coracao"></i>Entre Nós <span class="selo-4blue">4blue</span></a>
+  <span class="selo-admin">Organizador</span>
+</header>
+<main class="admin">
+  <form class="painel login-admin" id="f-login">
+    <h1>Área do organizador</h1>
+    <p>Mesas, contas criadas, cartas mais tiradas e o botão para encerrar uma mesa. A senha fica na aba Config da planilha.</p>
+    <label class="campo"><span>Senha</span><input type="password" name="senha" autocomplete="current-password" required></label>
+    <p class="aviso-erro" id="erro-login" role="alert"></p>
+    <div><button class="btn" type="submit">Entrar</button></div>
+  </form>
+
+  <div id="painel" hidden>
+    <div class="admin-cab">
+      <h1>Painel do jogo</h1>
+      <div><button class="btn btn-fantasma btn-peq" type="button" id="b-atualizar">Atualizar</button> <button class="btn btn-fantasma btn-peq" type="button" id="b-sair">Sair</button></div>
+    </div>
+    <div class="numeros" id="numeros"></div>
+    <h2>Mesas</h2>
+    <div class="tabela-wrap"><table>
+      <thead><tr><th>Mesa</th><th>Situação</th><th>Lugares</th><th>Tom</th><th>Quem está</th><th>Cartas</th><th>Mensagens</th><th>Último movimento</th><th></th></tr></thead>
+      <tbody id="salas"></tbody>
+    </table></div>
+    <h2>Contas</h2>
+    <div class="tabela-wrap"><table>
+      <thead><tr><th>Apelido</th><th>Nome</th><th>E-mail</th><th>Criada</th><th>Último acesso</th></tr></thead>
+      <tbody id="contas"></tbody>
+    </table></div>
+    <h2>Cartas mais tiradas</h2>
+    <ul class="ranking" id="ranking"></ul>
+  </div>
+</main>
+<script src="js/config.js"></script>
+<script src="js/cartas.js"></script>
+<script src="js/logica.js"></script>
+<script src="js/servico.js"></script>
+<script src="js/api.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

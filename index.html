@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entre Nós · 4blue</title>
+<meta name="description" content="O jogo de cartas da equipe 4blue: perguntas para se conhecer melhor, online, de 2 a 8 pessoas.">
+<meta name="theme-color" content="#0e1a3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232f7bff' d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="pg-entrada">
+<header class="topo">
+  <a class="logo" href="./"><i data-ico="coracao"></i>Entre Nós <span class="selo-4blue">4blue</span></a>
+  <button class="btn btn-fantasma btn-peq" type="button" data-regras><i data-ico="livro"></i>Como se joga</button>
+</header>
+
+<main class="entrada-grade">
+  <section class="boas-vindas" aria-labelledby="titulo">
+    <button class="capa" type="button" id="capa" aria-label="Tirar outras cartas de amostra"></button>
+    <h1 id="titulo">Entre Nós</h1>
+    <p class="apoio">O jogo de cartas do time 4blue. Na sua vez, você tira uma carta e responde no chat que a mesa inteira lê. De 2 a 8 pessoas, cada uma de onde estiver.</p>
+    <ul class="chips-baralho" id="chips-baralho" aria-label="Os sete maços do baralho"></ul>
+  </section>
+
+  <section class="painel conta" aria-label="Sua conta">
+    <div class="abas" role="tablist" aria-label="Entrar ou criar conta">
+      <button type="button" role="tab" id="aba-cadastro" aria-controls="f-cadastro" aria-selected="true">Criar conta</button>
+      <button type="button" role="tab" id="aba-login" aria-controls="f-login" aria-selected="false" tabindex="-1">Já tenho conta</button>
+    </div>
+
+    <form id="f-cadastro" role="tabpanel" aria-labelledby="aba-cadastro" novalidate>
+      <p class="sub">Leva meio minuto. Depois é só abrir uma mesa e chamar o time.</p>
+      <label class="campo"><span>Nome</span>
+        <input name="nome" autocomplete="name" maxlength="60" required placeholder="Seu nome">
+      </label>
+      <label class="campo"><span>E-mail</span>
+        <input name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required placeholder="voce@email.com">
+      </label>
+      <label class="campo"><span>Apelido <small>é o que a mesa vê</small></span>
+        <input name="apelido" autocomplete="nickname" maxlength="20" required placeholder="Como o time te chama">
+      </label>
+      <label class="campo senha"><span>Senha <small>8 caracteres ou mais</small></span>
+        <input name="senha" type="password" autocomplete="new-password" minlength="8" maxlength="100" required>
+        <button type="button" class="ver-senha" aria-label="Mostrar senha" aria-pressed="false"><i data-ico="olho"></i></button>
+      </label>
+      <p class="aviso-erro" id="erro-cadastro" role="alert"></p>
+      <button class="btn" type="submit">Criar conta e jogar</button>
+    </form>
+
+    <form id="f-login" role="tabpanel" aria-labelledby="aba-login" novalidate hidden>
+      <p class="sub">Que bom que você voltou. Sua mesa está te esperando.</p>
+      <label class="campo"><span>E-mail</span>
+        <input name="email" type="email" autocomplete="email" inputmode="email" maxlength="120" required>
+      </label>
+      <label class="campo senha"><span>Senha</span>
+        <input name="senha" type="password" autocomplete="current-password" maxlength="100" required>
+        <button type="button" class="ver-senha" aria-label="Mostrar senha" aria-pressed="false"><i data-ico="olho"></i></button>
+      </label>
+      <p class="aviso-erro" id="erro-login" role="alert"></p>
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+  </section>
+</main>
+
+<footer class="rodape-mini">
+  <button type="button" data-regras>Regras da casa</button>
+  <a href="admin.html">Área do organizador</a>
+  <small>Feito para a equipe 4blue · ninguém precisa responder o que não quer</small>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/cartas.js"></script>
+<script src="js/logica.js"></script>
+<script src="js/servico.js"></script>
+<script src="js/api.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/entrada.js"></script>
+</body>
+</html>

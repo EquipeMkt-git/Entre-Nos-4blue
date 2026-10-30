@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salão · Entre Nós 4blue</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e1a3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232f7bff' d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="pg-salao">
+<header class="topo">
+  <a class="logo" href="salao.html"><i data-ico="coracao"></i>Entre Nós <span class="selo-4blue">4blue</span></a>
+  <div class="topo-acoes">
+    <button class="btn btn-fantasma btn-peq" type="button" data-regras aria-label="Como se joga"><i data-ico="livro"></i><span class="some-celular">Regras</span></button>
+    <button class="eu-chip" type="button" id="b-eu" aria-label="Sua conta"></button>
+  </div>
+</header>
+<div class="demo-aviso" id="demo-aviso" hidden>Modo demonstração: contas e mesas existem só neste navegador. Cada aba é uma pessoa.</div>
+
+<main class="salao">
+  <section class="convites" id="convites" aria-live="polite" hidden></section>
+
+  <section class="painel nova-mesa" aria-labelledby="t-nova">
+    <h1 id="t-nova">Abrir uma mesa</h1>
+    <p class="sub">Escolha o tom e chame o time. Só entra quem receber o convite.</p>
+    <form id="f-mesa" novalidate>
+      <fieldset class="baralhos" hidden>
+        <legend>Qual baralho?</legend>
+        <div class="baralhos-grade" id="baralhos"></div>
+      </fieldset>
+      <fieldset class="escolha" id="tons"><legend>Tom</legend></fieldset>
+      <fieldset class="escolha">
+        <legend>Lugares</legend>
+        <label><input type="radio" name="cap" value="2"><span>2</span></label>
+        <label><input type="radio" name="cap" value="4" checked><span>4</span></label>
+        <label><input type="radio" name="cap" value="6"><span>6</span></label>
+        <label><input type="radio" name="cap" value="8"><span>8</span></label>
+      </fieldset>
+      <div class="chamar-ja" id="chamar-ja" hidden></div>
+      <p class="aviso-erro" id="erro-mesa" role="alert"></p>
+      <button class="btn btn-grande" type="submit" id="b-abrir">%%jogar%%<span>Abrir a mesa</span></button>
+    </form>
+  </section>
+
+  <aside class="lado">
+    <section class="bloco" id="minhas" hidden aria-labelledby="t-minhas">
+      <h2 id="t-minhas">Suas mesas abertas</h2>
+      <ul class="lista-mesas" id="lista-minhas"></ul>
+    </section>
+    <section class="bloco" aria-labelledby="t-online">
+      <h2 id="t-online">Online agora <small id="n-online"></small></h2>
+      <p class="dica">Toque em quem você quer chamar. O convite vai junto quando a mesa abrir.</p>
+      <ul class="gente" id="online"><li class="vazio">Procurando quem está por aqui...</li></ul>
+    </section>
+  </aside>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/cartas.js"></script>
+<script src="js/logica.js"></script>
+<script src="js/servico.js"></script>
+<script src="js/api.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/tema.js"></script>
+<script src="js/salao.js"></script>
+</body>
+</html>
